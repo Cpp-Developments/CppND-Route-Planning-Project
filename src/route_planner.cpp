@@ -18,7 +18,7 @@ float RoutePlanner::CalculateHValue(RouteModel::Node const *node) {
 
 void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
   	current_node->FindNeighbors();
-    for (RouteModel::Node * node : current_node->neighbors){
+    for (RouteModel::Node* node : current_node->neighbors){
     	node->parent = current_node;
         node->h_value = CalculateHValue(node);
         node->g_value = current_node->g_value + current_node->distance(*node);
@@ -57,7 +57,7 @@ std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node 
 
 void RoutePlanner::AStarSearch() {
     RouteModel::Node *current_node = nullptr;
-  
+
     this->open_list.emplace_back(this->start_node);
   	this->start_node->visited = true;
 
