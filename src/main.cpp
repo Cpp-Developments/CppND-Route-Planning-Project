@@ -56,12 +56,45 @@ int main(int argc, const char **argv)
     float start_y;
     float end_x;
     float end_y;
-    
-    std::cout << "Please enter starting point x and y:" << "\n";
-    std::cin >> start_x >> start_y;
-    std::cout << "Please enter end point point x and y:" << "\n";
-    std::cin >> end_x >> end_y;
 
+    // Checking for valid input from 0 to 100
+    cout << "Enter a start_x from 0 to 100: ";
+    cin >> start_x;
+    while (!(cin) || start_x < 0 || start_x > 100) {
+      cout << "Invalid entry. Enter a start_x from 0 to 100: ";
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      std::cin >> start_x;
+    }
+
+    cout << "Enter a start_y from 0 to 100: ";
+    cin >> start_y;
+    while (!(cin) || start_y < 0 || start_y > 100) {
+        cout << "Invalid entry. Enter a start_y from 0 to 100: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        std::cin >> start_y;
+    }
+
+    cout << "Enter a end_x from 0 to 100: ";
+    cin >> end_x;
+    while (!(cin) || end_x < 0 || end_x > 100) {
+        cout << "Invalid entry. Enter a end_x from 0 to 100: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        std::cin >> end_x;
+    }
+
+    cout << "Enter a end_y from 0 to 100: ";
+    cin >> end_y;
+    while (!(cin) || end_y < 0 || end_y > 100) {
+        cout << "Invalid entry. Enter a end_y from 0 to 100: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        std::cin >> end_y;
+    }
+
+    // output the start and end points for user verification
   	std::cout << "starting point:(" << start_x << "," << start_y << ")\n";
     std::cout << "End point:(" << end_x << "," << end_y << ")\n";
 
